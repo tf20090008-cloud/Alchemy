@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5efe2">
+    <title>Little Alchemy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,700;9..144,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="home-screen" id="home-screen">
+        <div class="home-orbit orbit-one" aria-hidden="true">💧</div>
+        <div class="home-orbit orbit-two" aria-hidden="true">🔥</div>
+        <div class="home-orbit orbit-three" aria-hidden="true">🌱</div>
+        <div class="home-content">
+            <div class="home-brand"><span class="brand-mark" aria-hidden="true">🧪</span><span>LABORATORIUM MINI</span></div>
+            <p class="home-kicker">SEBUAH PERMAINAN MERACIK ELEMEN</p>
+            <h2>Little<br><em>Alchemy</em></h2>
+            <p class="home-intro">Mulai dari empat elemen dasar.<br>Campurkan, bereksperimen, dan buka rahasia baru.</p>
+            <button class="start-button" id="start-button" type="button">Mulai bermain <span>→</span></button>
+            <div class="home-basics" aria-label="Tiga elemen dasar"><span>🔥</span><span>💧</span><span>🌍</span><small>3 elemen dasar · 94 penemuan</small></div>
+        </div>
+        <div class="home-footer"><span>Eksperimen kecil, penemuan besar.</div>
+    </section>
+
+
+    <main class="app-shell game-screen" id="game-screen">
+        <header class="topbar">
+            <div class="brand-lockup">
+                <div class="brand-mark" aria-hidden="true">🧪</div>
+                <div>
+                    <p class="eyebrow">LABORATORIUM MINI</p>
+                    <h1>Little Alchemy</h1>
+                </div>
+            </div>
+            <nav class="main-nav" aria-label="Navigasi utama">
+                <button class="nav-button is-active" type="button" data-view="alchemy-view">⚗️ <span>Racik</span></button>
+                <button class="nav-button" type="button" data-view="index-view">▦ <span>Indeks</span></button>
+                <button class="nav-button" type="button" data-view="achievements-view">🏆 <span>Achievement</span></button>
+                <button class="nav-button" type="button" data-view="secret-view">⌘ <span>Secret</span></button>
+            </nav>
+            <div class="progress-wrap">
+                <span id="discovery-count">3 / 94 ditemukan</span>
+                <div class="progress-track" aria-label="Kemajuan penemuan"><span id="progress-bar"></span></div>
+            </div>
+            <button class="hint-button" id="hint-button" type="button" title="Lihat satu resep bantuan" disabled>💡 <span>Hint</span></button>
+            <button class="home-button" id="home-button" type="button" title="Kembali ke beranda">⌂ <span>Beranda</span></button>
+            <button class="reset-button" id="reset-button" type="button" title="Mulai ulang permainan">↻ <span>Reset</span></button>
+        </header>
+
+
+        <section class="workspace view-panel is-active" id="alchemy-view">
+            <div class="workspace-heading">
+                <div>
+                    <p class="eyebrow warm">MEJA EKSPERIMEN <span>•</span> <span id="round-label">01</span></p>
+                    <h2>Campurkan dua hal.<br><em>Temukan sesuatu yang baru.</em></h2>
+                </div>
+                <div class="hint-note">💡 <span>Tip: coba elemen dasar dengan<br>sesuatu yang tidak terduga.</span></div>
+            </div>
+
+
+            <div class="mixing-board" id="mixing-board">
+                <div class="board-grid" aria-hidden="true"></div>
+                <div class="slot-area">
+                    <button class="mix-slot" data-slot="0" type="button" aria-label="Slot bahan pertama">
+                        <span class="slot-emoji">+</span><span class="slot-label">Pilih elemen</span>
+                    </button>
+                    <div class="plus-sign" aria-hidden="true">+</div>
+                    <button class="mix-slot" data-slot="1" type="button" aria-label="Slot bahan kedua">
+                        <span class="slot-emoji">+</span><span class="slot-label">Pilih elemen</span>
+                    </button>
+                    <button class="combine-button" id="combine-button" type="button" disabled><span>⚗️</span> Campurkan</button>
+                </div>
+                <div class="result-toast" id="result-toast" role="status" aria-live="polite"></div>
+            </div>
+
+
+            <div class="collection-header">
+                <div>
+                    <h3>Elemen terbuka</h3>
+                    <p>Klik elemen untuk menaruhnya di meja.</p>
+                </div>
+                <label class="search-box"><span>⌕</span><input id="search-input" type="search" placeholder="Cari elemen..." autocomplete="off"></label>
+            </div>
+            <div class="element-grid" id="element-grid"></div>
+            <p class="empty-state" id="empty-state" hidden>Elemen tidak ditemukan. Coba kata lain.</p>
+
+
+        </section>
+
+        <section class="workspace view-panel" id="index-view" hidden>
+            <div class="page-heading">
+                <div>
+                    <p class="eyebrow warm">CATATAN LABORATORIUM</p>
+                    <h2>Indeks <em>penemuan.</em></h2>
+                    <p class="page-intro">Lihat elemen yang sudah terbuka dan resep yang membawamu ke sana.</p>
+                </div>
+                <span class="index-legend">Resep elemen yang sudah terbuka</span>
+            </div>
+            <div class="index-grid" id="index-grid"></div>
+        </section>
+
+        <section class="workspace view-panel" id="achievements-view" hidden>
+            <div class="page-heading">
+                <div>
+                    <p class="eyebrow warm">CATATAN PERJALANAN</p>
+                    <h2>Achievement <em>terbuka.</em></h2>
+                    <p class="page-intro">Setiap eksperimen meninggalkan jejak. Kumpulkan semuanya.</p>
+                </div>
+                <strong class="achievement-count" id="achievement-count">0 / 20</strong>
+            </div>
+            <div class="achievement-grid" id="achievement-grid"></div>
+
+            <div class="rare-chamber" id="rare-chamber">
+                <div class="rare-heading">
+                    <div>
+                        <p class="eyebrow warm">RUANG RAHASIA</p>
+                        <h3>Konvergensi elemen langka</h3>
+                        <p id="rare-status">Temukan semua 10 elemen langka untuk membuka ruang ini.</p>
+                    </div>
+                    <span class="rare-lock" id="rare-lock">🔒 Terkunci</span>
+                </div>
+                <div class="rare-elements" id="rare-elements"></div>
+                <button class="rare-combine-button" id="rare-combine-button" type="button" disabled>Gabungkan semua elemen langka</button>
+            </div>
+        </section>
+
+        <section class="workspace view-panel" id="secret-view" hidden>
+            <div class="redeem-panel">
+                <p class="eyebrow warm">AKSES RAHASIA</p>
+                <h2>Secret <em>chamber.</em></h2>
+                <div class="secret-gate" id="secret-gate">
+                    <div class="secret-message"><strong>Sistem</strong><span>Kenapa kamu datang ke sini?</span></div>
+                    <form class="secret-question-form" id="secret-question-form">
+                        <label for="secret-answer">Jawabanmu</label>
+                        <div class="redeem-input-row">
+                            <input id="secret-answer" type="text" autocomplete="off" required>
+                            <button type="submit">Jawab</button>
+                        </div>
+                    </form>
+                    <p class="redeem-status" id="secret-status" role="status" aria-live="polite"></p>
+                </div>
+                <div class="secret-content" id="secret-content" hidden>
+                    <p class="page-intro">Masukkan kode khusus untuk membuka seluruh catatan elemen.</p>
+                    <form class="redeem-form" id="redeem-form">
+                        <label for="redeem-input">Kode akses</label>
+                        <div class="redeem-input-row">
+                            <input id="redeem-input" name="redeem-code" type="text" autocomplete="off" spellcheck="false" required>
+                            <button type="submit">Buka elemen</button>
+                        </div>
+                    </form>
+                    <p class="redeem-status" id="redeem-status" role="status" aria-live="polite"></p>
+                    <div class="end-chamber" id="end-chamber" hidden>
+                        <p class="eyebrow warm">KONVERGENSI TERAKHIR</p>
+                        <h3>Satukan The Creator</h3>
+                        <p class="page-intro">Dua entitas The Creator dapat membuka akhir dari eksperimen.</p>
+                        <div class="creator-slots">
+                            <button class="creator-slot" type="button" data-creator-slot="0">👁️<small>The Creator</small></button>
+                            <span class="creator-plus">+</span>
+                            <button class="creator-slot" type="button" data-creator-slot="1">👁️<small>The Creator</small></button>
+                        </div>
+                        <button class="end-combine-button" id="end-combine-button" type="button" disabled>Gabungkan menjadi Tamat</button>
+                        <p class="end-status" id="end-status" role="status" aria-live="polite"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <footer class="footer-note"><span>Eksperimen kecil, penemuan besar.</span></footer>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
+
+

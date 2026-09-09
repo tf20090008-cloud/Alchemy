@@ -239,8 +239,24 @@ const achievementDefinitions = [
     { id: "special-complete", icon: "🟢", title: "Alkemis Spesial", description: "Menyelesaikan semua 10 elemen spesial.", condition: () => specialDiscoveredCount() === specialElements.length },
     { id: "rare-alchemist", icon: "👑", title: "Alkemis Abadi", description: "Menggabungkan semua elemen langka di ruang rahasia.", condition: () => unlockedAchievements.has("rare-alchemist") },
     { id: "absolute-cosmos", icon: "👁️‍🗨️", title: "Kosmos Absolut", description: "Membuka hasil konvergensi seluruh elemen spesial.", condition: () => mythicalUnlocked },
-    { id: "the-end", icon: "🏁", title: "???????????????", description: "", condition: () => endUnlocked }
+    { id: "the-end", icon: "🏁", title: "???????????????", description: "", condition: () => endUnlocked },
+    { id: "fifty-mixes", icon: "🧪", title: "Mesin Reaksi", description: "Berhasil menciptakan 50 reaksi Playfun.", condition: () => stats.successfulMixes >= 50 },
+    { id: "hundred-mixes", icon: "⚗️", title: "Ritual Seratus", description: "Berhasil menciptakan 100 reaksi Playfun.", condition: () => stats.successfulMixes >= 100 },
+    { id: "seventy-five-elements", icon: "🧭", title: "Penjelajah Besar", description: "Membuka 75 elemen Playfun.", condition: () => discoveredCount() >= 75 },
+    { id: "common-catalog", icon: "📖", title: "Perpustakaan Alkemis", description: "Membuka seluruh elemen biasa Playfun.", condition: () => elements.filter((element) => !element.rare && !element.epic).every((element) => element.discovered) },
+    { id: "rare-twenty", icon: "💠", title: "Penakluk Kelangkaan", description: "Membuka seluruh 20 elemen rare.", condition: () => rareDiscoveredCount() === rareElementIds.length },
+    { id: "special-five", icon: "✦", title: "Perancang Relik", description: "Membuka 5 elemen spesial.", condition: () => specialDiscoveredCount() >= 5 },
+    { id: "creator-awakened", icon: "👁️", title: "Membangunkan Sang Pencipta", description: "Membangunkan The Creator dari konvergensi rare.", condition: () => getElement("creator")?.discovered },
+    { id: "hint-master", icon: "🕯️", title: "Mata Sang Penuntun", description: "Menggunakan 10 hint Playfun.", condition: () => hintsUsed >= 10 },
+    { id: "mythical-convergence", icon: "👁️‍🗨️", title: "Melampaui Batas", description: "Membuka Kosmos Absolut.", condition: () => mythicalUnlocked },
+    { id: "playfun-completionist", icon: "🏆", title: "Legenda Playfun", description: "Membuka seluruh katalog Playfun dan Kosmos Absolut.", condition: () => elements.every((element) => element.discovered) && mythicalUnlocked }
 ];
+const achievementDifficulty = new Map([
+    ["first-mix", "easy"], ["three-mixes", "easy"], ["first-discovery", "easy"], ["five-elements", "easy"], ["rare-first", "easy"], ["first-hint", "easy"], ["find-life", "easy"], ["find-human", "easy"],
+    ["ten-mixes", "medium"], ["ten-elements", "medium"], ["twenty-elements", "medium"], ["rare-five", "medium"], ["three-hints", "medium"], ["find-city", "medium"], ["find-universe", "medium"], ["special-complete", "medium"], ["special-five", "medium"],
+    ["twenty-five-mixes", "hard"], ["forty-elements", "hard"], ["sixty-elements", "hard"], ["complete-catalog", "hard"], ["rare-alchemist", "hard"], ["absolute-cosmos", "hard"], ["the-end", "hard"], ["fifty-mixes", "hard"], ["hundred-mixes", "hard"], ["seventy-five-elements", "hard"], ["common-catalog", "hard"], ["rare-twenty", "hard"], ["creator-awakened", "hard"], ["hint-master", "hard"], ["mythical-convergence", "hard"], ["playfun-completionist", "hard"]
+]);
+achievementDefinitions.forEach((achievement) => { achievement.difficulty = achievementDifficulty.get(achievement.id) || "medium"; });
 
 
 const elements = structuredClone(initialElements);
@@ -675,7 +691,8 @@ function renderAchievements() {
         const unlocked = unlockedAchievements.has(achievement.id);
         const title = achievement.id === "the-end" && unlocked ? "🙂" : achievement.title;
         const description = achievement.description ? `<small>${achievement.description}</small>` : "";
-        return `<article class="achievement-card${unlocked ? " is-unlocked" : ""}"><span class="achievement-icon">${unlocked ? achievement.icon : "🔒"}</span><div><strong>${title}</strong>${description}</div><b>${unlocked ? "Terbuka" : "Terkunci"}</b></article>`;
+        const difficultyLabel = achievement.difficulty === "easy" ? "Mudah" : achievement.difficulty === "medium" ? "Menengah" : "Sulit";
+        return `<article class="achievement-card difficulty-${achievement.difficulty}${unlocked ? " is-unlocked" : ""}"><span class="achievement-icon">${unlocked ? achievement.icon : "🔒"}</span><div><strong>${title}</strong>${description}</div><span class="achievement-difficulty">${difficultyLabel}</span><b>${unlocked ? "Terbuka" : "Terkunci"}</b></article>`;
     }).join("");
 }
 
@@ -950,6 +967,14 @@ document.querySelectorAll(".nav-button").forEach((button) => button.addEventList
     }
     showView(button.dataset.view, button);
 }));
+document.addEventListener("keydown", (event) => {
+    if (!event.repeat && gameScreen.classList.contains("is-visible") && event.ctrlKey && event.shiftKey && event.key.toLowerCase() === "s") {
+        event.preventDefault();
+        const secretButton = document.querySelector('[data-view="secret-view"]');
+        showView("secret-view", secretButton);
+        openSecret();
+    }
+});
 secretQuestionForm.addEventListener("submit", (event) => {
     event.preventDefault();
     if (secretAnswer.value.trim() !== secretAnswerKey) {

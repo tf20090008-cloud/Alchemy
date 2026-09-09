@@ -116,8 +116,8 @@ const combinations = {
     "plant+time": "tree", "flower+plant": "fruit", "animal+earth": "human", "human+tool": "house",
     "electricity+computer": "idea", "star+star": "galaxy", "galaxy+galaxy": "universe", "sun+rain": "rainbow",
     "moon+sun": "time", "stone+air": "sand", "life+energy": "human", "metal+electricity": "computer",
-    "book+human": "idea", "music+human": "idea", "space+star": "galaxy",
-    "energy+steam": "air", "fire+energy": "sun", "water+energy": "moon", "time+sun": "space",
+    "book+human": "idea", "music+human": "idea", "human+idea": "music", "idea+wood": "book", "space+star": "galaxy",
+    "energy+steam": "air", "fire+energy": "sun", "water+energy": "moon", "water+pressure": "ice", "time+sun": "space",
     "sun+space": "star", "land+fire": "stone", "stone+water": "sand", "metal+stone": "tool",
     "volcano+fire": "ash", "earth+mud": "clay", "clay+fire": "brick", "earth+puddle": "pond",
     "pond+water": "ocean", "fire+ocean": "salt", "sand+water": "beach", "tree+tree": "forest",
@@ -215,7 +215,7 @@ const educationCompounds = [
     { id: "acetic-acid", formula: "C2H4O2", name: "Asam asetat", atoms: { C: 2, H: 4, O: 2 }, note: "Senyawa utama dalam cuka." }
 ];
 const saveKey = "alchemy-mini-save-v1";
-const redeemCode = [50, 48, 48, 57, 74, 117, 108, 105, 50, 57, 80, 101, 116, 97, 108, 71, 114, 97, 110, 100, 101].map((value) => String.fromCharCode(value)).join("");
+const redeemCode = "KyleOrangTergantengDIDunia";
 const achievementDefinitions = [
     { id: "first-mix", icon: "⚗️", title: "Percobaan Pertama", description: "Berhasil menciptakan reaksi pertama.", condition: () => stats.successfulMixes >= 1 },
     { id: "three-mixes", icon: "🧪", title: "Mulai Panas", description: "Berhasil menciptakan 3 reaksi.", condition: () => stats.successfulMixes >= 3 },
@@ -306,7 +306,7 @@ const periodicQuizNext = document.querySelector("#periodic-quiz-next");
 const resetDialog = document.querySelector("#reset-dialog");
 const resetOptions = document.querySelector(".reset-options");
 const resetPlayfunOptions = document.querySelector("#reset-playfun-options");
-const secretAnswerKey = "Karena Game Ini Sangat Menyenangkan";
+const secretAnswerKey = "karena perintah developer untuk pengembangan website ini";
 let hintsUsed = 0;
 let specialSlots = [null, null];
 let educationAtoms = [];

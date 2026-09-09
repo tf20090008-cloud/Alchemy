@@ -16,15 +16,104 @@
         <div class="home-orbit orbit-two" aria-hidden="true">🔥</div>
         <div class="home-orbit orbit-three" aria-hidden="true">🌱</div>
         <div class="home-content">
-            <div class="home-brand"><span class="brand-mark" aria-hidden="true">🧪</span><span>LABORATORIUM MINI</span></div>
-            <p class="home-kicker">SEBUAH PERMAINAN MERACIK ELEMEN</p>
+            <div class="home-brand"><span class="brand-mark" aria-hidden="true">🧪</span><span>LABORATORIUM MINI</span><i>RUANG EKSPERIMEN</i></div>
+            <p class="home-kicker">DUA CARA UNTUK MENEMUKAN SESUATU YANG BARU</p>
             <h2>Little<br><em>Alchemy</em></h2>
-            <p class="home-intro">Mulai dari empat elemen dasar.<br>Campurkan, bereksperimen, dan buka rahasia baru.</p>
-            <button class="start-button" id="start-button" type="button">Mulai bermain <span>→</span></button>
-            <div class="home-basics" aria-label="Tiga elemen dasar"><span>🔥</span><span>💧</span><span>🌍</span><small>3 elemen dasar · 94 penemuan</small></div>
+            <p class="home-intro">Masuk ke laboratorium yang sesuai dengan rasa ingin tahumu.<br>Bebaskan imajinasi, atau bongkar logika di balik setiap unsur.</p>
+            <div class="mode-selector" aria-label="Pilih mode permainan">
+                <button class="mode-card mode-card-playfun" id="start-button" type="button">
+                    <span class="mode-card-number">01</span>
+                    <span class="mode-card-icon" aria-hidden="true">✦</span>
+                    <span class="mode-card-copy"><small>MODE BEBAS</small><strong>Playfun</strong><span>Campur apa saja. Kejutan adalah bagian dari resep.</span></span>
+                    <span class="mode-card-arrow" aria-hidden="true">↗</span>
+                </button>
+                <button class="mode-card mode-card-education" id="education-mode-button" type="button">
+                    <span class="mode-card-number">02</span>
+                    <span class="mode-card-icon" aria-hidden="true">⚛</span>
+                    <span class="mode-card-copy"><small>MODE RUMUS</small><strong>Edukasi</strong><span>Susun atom, baca tabel periodik, dan pahami reaksi.</span></span>
+                    <span class="mode-card-status">Masuk ↗</span>
+                </button>
+            </div>
+            <div class="home-basics" aria-label="Ringkasan laboratorium"><span>🔥</span><span>⚛</span><span>🌌</span><small>eksperimen bebas · rumus kimia · penemuan epic</small></div>
         </div>
-        <div class="home-footer"><span>Eksperimen kecil, penemuan besar.</div>
+        <div class="home-footer"><span>Eksperimen kecil, penemuan besar.</span><span>LAB / 02</span></div>
     </section>
+
+    <main class="education-shell education-screen" id="education-screen" hidden>
+        <header class="education-topbar">
+            <div class="brand-lockup">
+                <div class="brand-mark" aria-hidden="true">⚛</div>
+                <div>
+                    <p class="eyebrow">LABORATORIUM MINI</p>
+                    <h1>Mode Edukasi</h1>
+                </div>
+            </div>
+            <nav class="education-nav" aria-label="Navigasi mode edukasi">
+                <button class="education-nav-button is-active" type="button" data-education-view="education-lab-view">⚗️ <span>Racik</span></button>
+                <button class="education-nav-button" type="button" data-education-view="education-index-view">▦ <span>Indeks</span></button>
+                <button class="education-nav-button" type="button" data-education-view="education-periodic-view">⚛ <span>Tabel Periodik</span></button>
+            </nav>
+            <button class="education-exit-button" id="education-exit-button" type="button">← <span>Pilih mode</span></button>
+        </header>
+
+        <section class="education-view is-active" id="education-lab-view">
+            <div class="education-heading">
+                <div>
+                    <p class="eyebrow warm">LABORATORIUM RUMUS</p>
+                    <h2>Racik berdasarkan <em>rumus.</em></h2>
+                    <p class="page-intro">Pilih unsur dari tabel periodik. Tambahkan atom sebanyak yang dibutuhkan, lalu cek hasilnya.</p>
+                </div>
+                <div class="formula-example"><span>Contoh</span><strong>2 H + O → H₂O</strong></div>
+            </div>
+            <div class="education-workspace">
+                <section class="periodic-panel">
+                    <div class="panel-heading"><div><h3>Tabel periodik</h3><p>Pilih unsur untuk menambahkannya ke formula.</p></div><span class="atom-count" id="education-atom-count">0 atom</span></div>
+                    <div class="periodic-table" id="periodic-table" aria-label="Tabel periodik unsur"></div>
+                </section>
+                <section class="formula-panel">
+                    <div class="panel-heading"><div><h3>Meja formula</h3><p>Jumlah atom tidak dibatasi.</p></div><button class="clear-formula-button" id="clear-formula-button" type="button">Bersihkan</button></div>
+                    <div class="formula-builder" id="formula-builder"><p class="formula-empty">Pilih unsur untuk mulai meracik.</p></div>
+                    <div class="formula-preview" id="formula-preview">—</div>
+                    <button class="education-combine-button" id="education-combine-button" type="button" disabled>⚗️ Cek rumus</button>
+                    <p class="education-result" id="education-result" role="status" aria-live="polite"></p>
+                </section>
+            </div>
+        </section>
+
+        <section class="education-view" id="education-index-view" hidden>
+            <div class="education-heading">
+                <div>
+                    <p class="eyebrow warm">CATATAN KIMIA</p>
+                    <h2>Indeks <em>rumus.</em></h2>
+                    <p class="page-intro">Pelajari perbandingan atom dari senyawa yang sudah ditemukan.</p>
+                </div>
+                <strong class="education-discovery-count" id="education-discovery-count">0 / 30 ditemukan</strong>
+            </div>
+            <div class="formula-index-grid" id="formula-index-grid"></div>
+        </section>
+
+        <section class="education-view" id="education-periodic-view" hidden>
+            <div class="education-heading">
+                <div>
+                    <p class="eyebrow warm">PETA UNSUR</p>
+                    <h2>Tabel <em>periodik.</em></h2>
+                    <p class="page-intro">Kenali simbol, nomor atom, dan kelompok unsur yang dipakai di laboratorium.</p>
+                </div>
+                <div class="periodic-legend"><span class="legend-metal">Logam</span><span class="legend-nonmetal">Nonlogam</span><span class="legend-metalloid">Metaloid</span></div>
+            </div>
+            <div class="periodic-reference-panel">
+                <div class="panel-heading"><div><h3>Unsur yang tersedia</h3><p>Klik unsur untuk melihat nama dan nomor atomnya.</p></div><span class="atom-count" id="periodic-reference-count">0 unsur</span></div>
+                <div class="periodic-table periodic-table-reference" id="periodic-reference-table" aria-label="Referensi tabel periodik unsur"></div>
+            </div>
+            <div class="periodic-quiz-panel">
+                <div class="quiz-heading"><div><p class="eyebrow warm">QUIZ UNSUR</p><h3>Seberapa kenal kamu dengan tabel periodik?</h3><p id="periodic-quiz-prompt">Jawab pertanyaan untuk menguji ingatanmu.</p></div><strong id="periodic-quiz-score">0 / 0 benar</strong></div>
+                <div class="quiz-question" id="periodic-quiz-question"></div>
+                <div class="quiz-options" id="periodic-quiz-options"></div>
+                <p class="quiz-feedback" id="periodic-quiz-feedback" role="status" aria-live="polite"></p>
+                <button class="quiz-next-button" id="periodic-quiz-next" type="button" hidden>Pertanyaan berikutnya →</button>
+            </div>
+        </section>
+    </main>
 
 
     <main class="app-shell game-screen" id="game-screen">
@@ -38,18 +127,39 @@
             </div>
             <nav class="main-nav" aria-label="Navigasi utama">
                 <button class="nav-button is-active" type="button" data-view="alchemy-view">⚗️ <span>Racik</span></button>
+                <button class="nav-button" type="button" data-view="special-view">✦ <span>Racik Spesial</span></button>
                 <button class="nav-button" type="button" data-view="index-view">▦ <span>Indeks</span></button>
                 <button class="nav-button" type="button" data-view="achievements-view">🏆 <span>Achievement</span></button>
                 <button class="nav-button" type="button" data-view="secret-view">⌘ <span>Secret</span></button>
             </nav>
             <div class="progress-wrap">
-                <span id="discovery-count">3 / 94 ditemukan</span>
+                <span id="discovery-count">4 / 115 elemen ditemukan</span>
                 <div class="progress-track" aria-label="Kemajuan penemuan"><span id="progress-bar"></span></div>
             </div>
             <button class="hint-button" id="hint-button" type="button" title="Lihat satu resep bantuan" disabled>💡 <span>Hint</span></button>
             <button class="home-button" id="home-button" type="button" title="Kembali ke beranda">⌂ <span>Beranda</span></button>
             <button class="reset-button" id="reset-button" type="button" title="Mulai ulang permainan">↻ <span>Reset</span></button>
         </header>
+
+        <dialog class="reset-dialog" id="reset-dialog">
+            <div class="reset-dialog-content">
+                <p class="eyebrow warm">KONTROL PROGRES</p>
+                <h3>Reset yang mana?</h3>
+                <p>Pilih bagian progres yang ingin dihapus.</p>
+                <div class="reset-options">
+                    <button class="reset-option" id="reset-playfun-button" type="button"><strong>Reset Playfun</strong><small>Hapus elemen, rare, spesial, dan achievement Playfun. Progres Edukasi tetap ada.</small></button>
+                    <button class="reset-option reset-option-danger" id="reset-all-button" type="button"><strong>Reset seluruhnya</strong><small>Hapus semua progres Playfun dan Edukasi dari awal.</small></button>
+                </div>
+                <div class="reset-playfun-options" id="reset-playfun-options" hidden>
+                    <div class="reset-subheading"><strong>Bagian Playfun</strong><small>Pilih data yang ingin dihapus.</small></div>
+                    <button class="reset-option" id="reset-common-elements-button" type="button"><strong>Hapus elemen biasa</strong><small>Reset semua elemen non-rare. Elemen rare, spesial, dan Edukasi tetap ada.</small></button>
+                    <button class="reset-option reset-option-rare" id="reset-rare-elements-button" type="button"><strong>Hapus elemen rare</strong><small>Reset 20 rare, The Creator, dan elemen spesial yang bergantung padanya.</small></button>
+                    <button class="reset-option reset-option-danger" id="reset-achievements-button" type="button"><strong>Hapus pencapaian</strong><small>Hapus semua achievement Playfun tanpa menghapus elemen.</small></button>
+                    <button class="reset-back-button" id="reset-back-button" type="button">← Kembali ke pilihan reset</button>
+                </div>
+                <button class="reset-cancel-button" id="reset-cancel-button" type="button">Batal</button>
+            </div>
+        </dialog>
 
 
         <section class="workspace view-panel is-active" id="alchemy-view">
@@ -91,6 +201,35 @@
 
         </section>
 
+        <section class="workspace view-panel" id="special-view" hidden>
+            <div class="page-heading">
+                <div>
+                    <p class="eyebrow warm">LABORATORIUM RARE</p>
+                    <h2>Racik <em>spesial.</em></h2>
+                    <p class="page-intro">Padukan dua elemen langka untuk membuka sepuluh penemuan istimewa.</p>
+                </div>
+                <strong class="special-count" id="special-count">0 / 10 diracik</strong>
+            </div>
+            <div class="special-board" id="special-board">
+                <div class="special-slots">
+                    <button class="special-slot" data-special-slot="0" type="button" aria-label="Slot elemen rare pertama"><span class="special-slot-icon">✦</span><small>Pilih elemen rare</small></button>
+                    <span class="special-plus" aria-hidden="true">+</span>
+                    <button class="special-slot" data-special-slot="1" type="button" aria-label="Slot elemen rare kedua"><span class="special-slot-icon">✦</span><small>Pilih elemen rare</small></button>
+                    <button class="special-combine-button" id="special-combine-button" type="button" disabled>✦ Racik spesial</button>
+                </div>
+                <div class="result-toast" id="special-toast" role="status" aria-live="polite"></div>
+            </div>
+            <div class="collection-header special-collection-header">
+                <div><h3>Elemen rare</h3><p>Hanya elemen rare yang dapat digunakan di ruang ini.</p></div>
+            </div>
+            <div class="special-element-grid" id="special-element-grid"></div>
+            <p class="empty-state" id="special-empty-state" hidden>Belum ada elemen rare yang terbuka.</p>
+            <div class="special-results">
+                <div class="collection-header"><div><h3>Hasil racikan</h3><p>Sepuluh elemen ini memiliki simbolnya sendiri.</p></div></div>
+                <div class="special-result-grid" id="special-result-grid"></div>
+            </div>
+        </section>
+
         <section class="workspace view-panel" id="index-view" hidden>
             <div class="page-heading">
                 <div>
@@ -110,7 +249,7 @@
                     <h2>Achievement <em>terbuka.</em></h2>
                     <p class="page-intro">Setiap eksperimen meninggalkan jejak. Kumpulkan semuanya.</p>
                 </div>
-                <strong class="achievement-count" id="achievement-count">0 / 20</strong>
+                <strong class="achievement-count" id="achievement-count">0 / 23</strong>
             </div>
             <div class="achievement-grid" id="achievement-grid"></div>
 
@@ -119,12 +258,25 @@
                     <div>
                         <p class="eyebrow warm">RUANG RAHASIA</p>
                         <h3>Konvergensi elemen langka</h3>
-                        <p id="rare-status">Temukan semua 10 elemen langka untuk membuka ruang ini.</p>
+                        <p id="rare-status">Temukan semua 20 elemen langka untuk membuka ruang ini.</p>
                     </div>
                     <span class="rare-lock" id="rare-lock">🔒 Terkunci</span>
                 </div>
                 <div class="rare-elements" id="rare-elements"></div>
                 <button class="rare-combine-button" id="rare-combine-button" type="button" disabled>Gabungkan semua elemen langka</button>
+            </div>
+
+            <div class="mythical-chamber" id="mythical-chamber">
+                <div class="mythical-heading">
+                    <div>
+                        <p class="eyebrow mythical-eyebrow">KONVERGENSI EPIC</p>
+                        <h3>Kosmos Absolut <em>convergence.</em></h3>
+                        <p id="mythical-status">Temukan semua 10 elemen spesial untuk membuka konvergensi Kosmos Absolut.</p>
+                    </div>
+                    <span class="mythical-lock" id="mythical-lock">🔒 Terkunci</span>
+                </div>
+                <div class="mythical-elements" id="mythical-elements"></div>
+                <button class="mythical-combine-button" id="mythical-combine-button" type="button" disabled>Gabungkan menjadi Kosmos Absolut</button>
             </div>
         </section>
 
@@ -175,5 +327,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
-

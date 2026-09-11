@@ -182,6 +182,37 @@ const periodicElements = periodicElementData.map(([symbol, name], index) => ({
     symbol, name, number: index + 1,
     type: nobleGasSymbols.has(symbol) ? "noble" : metalloidSymbols.has(symbol) ? "metalloid" : nonmetalSymbols.has(symbol) ? "nonmetal" : "metal"
 }));
+const elementDescriptions = {
+    H: "Unsur paling ringan dan salah satu penyusun utama air serta bintang.", O: "Gas nonlogam yang dibutuhkan makhluk hidup untuk bernapas dan pembakaran.", C: "Unsur penting bagi kehidupan dan penyusun utama banyak senyawa organik.",
+    N: "Gas utama di atmosfer yang berperan dalam protein dan siklus kehidupan.", Fe: "Logam kuat yang banyak digunakan dalam baja dan menjadi bagian penting hemoglobin.", Au: "Logam mulia berwarna kuning yang tahan korosi dan bernilai tinggi.", Ag: "Logam mulia berkilau dengan konduktivitas listrik dan panas yang sangat baik.",
+    Cu: "Logam kemerahan yang sangat baik menghantarkan listrik dan panas.", He: "Gas mulia sangat ringan dan stabil yang sering digunakan pada balon serta kriogenik.", Cl: "Halogen reaktif yang digunakan dalam disinfeksi air dan pembuatan garam.",
+    Na: "Logam alkali reaktif yang membentuk garam dapur saat berikatan dengan klorin.", Si: "Metaloid penting untuk kaca, silikon, dan berbagai perangkat elektronik.", U: "Logam radioaktif berat yang digunakan sebagai bahan bakar nuklir.",
+    Hg: "Logam cair pada suhu ruang yang dahulu banyak digunakan dalam alat ukur.", S: "Unsur nonlogam berwarna kuning yang umum ditemukan pada mineral dan asam sulfat."
+};
+periodicElements.forEach((element) => {
+    const category = element.type === "noble" ? "gas mulia" : element.type === "metalloid" ? "metaloid" : element.type === "nonmetal" ? "nonlogam" : "logam";
+    element.description = elementDescriptions[element.symbol] || `${element.name} adalah unsur ${category} dengan nomor atom ${element.number}. Pelajari sifat dan kegunaannya melalui tabel periodik.`;
+});
+let activeElementSymbol = null;
+async function loadElementDescriptions() {
+    try {
+        const response = await fetch("deskripsi-unsur.txt");
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const descriptions = await response.text();
+        descriptions.split(/\r?\n/).forEach((line) => {
+            const [symbol, name, description] = line.split("|");
+            if (!symbol || !description) return;
+            const element = periodicElements.find((item) => item.symbol === symbol.trim());
+            if (!element) return;
+            element.name = name?.trim() || element.name;
+            element.description = description.trim();
+        });
+        renderPeriodicTable();
+        if (activeElementSymbol) showElementDetail(activeElementSymbol);
+    } catch (error) {
+        console.warn("Deskripsi unsur tidak dapat dimuat.", error);
+    }
+}
 const educationCompounds = [
     { id: "h2o", formula: "H2O", name: "Air", atoms: { H: 2, O: 1 }, note: "Dua atom hidrogen dan satu atom oksigen." },
     { id: "o2", formula: "O2", name: "Oksigen molekuler", atoms: { O: 2 }, note: "Oksigen yang kita hirup berbentuk molekul diatomik." },
@@ -314,6 +345,14 @@ const formulaIndexGrid = document.querySelector("#formula-index-grid");
 const educationDiscoveryCount = document.querySelector("#education-discovery-count");
 const periodicReferenceTable = document.querySelector("#periodic-reference-table");
 const periodicReferenceCount = document.querySelector("#periodic-reference-count");
+const elementDetailPanel = document.querySelector("#element-detail-panel");
+const elementDetailImage = document.querySelector("#element-detail-image");
+const elementDetailImageStatus = document.querySelector("#element-detail-image-status");
+const elementDetailName = document.querySelector("#element-detail-name");
+const elementDetailSymbol = document.querySelector("#element-detail-symbol");
+const elementDetailNumber = document.querySelector("#element-detail-number");
+const elementDetailType = document.querySelector("#element-detail-type");
+const elementDetailDescription = document.querySelector("#element-detail-description");
 const periodicQuizQuestion = document.querySelector("#periodic-quiz-question");
 const periodicQuizOptions = document.querySelector("#periodic-quiz-options");
 const periodicQuizFeedback = document.querySelector("#periodic-quiz-feedback");
@@ -415,6 +454,36 @@ function renderPeriodicTable() {
     periodicTable.innerHTML = elementsMarkup;
     periodicReferenceTable.innerHTML = periodicElements.map((element) => `<button class="periodic-element ${element.type}" type="button" data-periodic-reference="${element.symbol}" title="${element.name} (${element.symbol})"><b>${element.symbol}</b><small>${element.number}</small><span>${element.name}</span></button>`).join("");
     periodicReferenceCount.textContent = `${periodicElements.length} unsur`;
+}
+
+
+function showElementDetail(symbol) {
+    const element = periodicElements.find((item) => item.symbol === symbol);
+    if (!element) return;
+    activeElementSymbol = symbol;
+    const imagePaths = [`FotoTabelPeriodik/${element.symbol}.jpg`, `FotoTabelPeriodik/${element.symbol}.JPG`, `FotoTabelPeriodik/${element.symbol}.png`];
+    if (element.symbol === "Gd") imagePaths.push("FotoTabelPeriodik/Gd,jpg.jpg");
+    let imageIndex = 0;
+    elementDetailPanel.hidden = false;
+    elementDetailImage.src = imagePaths[imageIndex];
+    elementDetailImage.alt = `Foto ${element.name}`;
+    elementDetailImage.hidden = false;
+    elementDetailImageStatus.hidden = true;
+    elementDetailImage.onerror = () => {
+        imageIndex += 1;
+        if (imageIndex < imagePaths.length) {
+            elementDetailImage.src = imagePaths[imageIndex];
+            return;
+        }
+        elementDetailImage.hidden = true;
+        elementDetailImageStatus.textContent = "Gambar belum tersedia";
+        elementDetailImageStatus.hidden = false;
+    };
+    elementDetailName.textContent = element.name;
+    elementDetailSymbol.textContent = element.symbol;
+    elementDetailNumber.textContent = `Nomor atom ${element.number}`;
+    elementDetailType.textContent = element.type === "noble" ? "Gas mulia" : element.type === "metalloid" ? "Metaloid" : element.type === "nonmetal" ? "Nonlogam" : "Logam";
+    elementDetailDescription.textContent = element.description;
 }
 
 
@@ -937,6 +1006,7 @@ document.querySelectorAll(".mix-slot").forEach((slot, index) => slot.addEventLis
 document.querySelectorAll(".special-slot").forEach((slot, index) => slot.addEventListener("click", () => { specialSlots[index] = null; updateSpecialBoard(); }));
 specialElementGrid.addEventListener("click", (event) => { const card = event.target.closest("[data-special-element]"); if (!card) return; const openSlot = specialSlots.findIndex((slot) => !slot); specialSlots[openSlot === -1 ? 0 : openSlot] = card.dataset.specialElement; updateSpecialBoard(); });
 periodicTable.addEventListener("click", (event) => { const element = event.target.closest("[data-education-element]"); if (!element) return; educationAtoms.push(element.dataset.educationElement); renderEducationFormula(); });
+periodicReferenceTable.addEventListener("click", (event) => { const element = event.target.closest("[data-periodic-reference]"); if (element) showElementDetail(element.dataset.periodicReference); });
 periodicQuizOptions.addEventListener("click", (event) => { const option = event.target.closest("[data-quiz-answer]"); if (option) answerPeriodicQuiz(option.dataset.quizAnswer); });
 periodicQuizNext.addEventListener("click", advancePeriodicQuiz);
 formulaBuilder.addEventListener("click", (event) => { const chip = event.target.closest("[data-education-remove]"); if (!chip) return; const symbol = chip.dataset.educationRemove; const atomIndex = educationAtoms.lastIndexOf(symbol); if (atomIndex >= 0) educationAtoms.splice(atomIndex, 1); renderEducationFormula(); });
@@ -1021,6 +1091,7 @@ renderMythicalChamber();
 renderEndChamber();
 renderSpecialElements();
 renderPeriodicTable();
+loadElementDescriptions();
 renderPeriodicQuiz();
 renderEducationFormula();
 renderEducationIndex();

@@ -1,0 +1,118 @@
+H|Hidrogen|Unsur paling ringan dan melimpah di alam semesta, penyusun utama air.
+He|Helium|Gas mulia yang sangat ringan, stabil, dan digunakan untuk mengisi balon.
+Li|Litium|Logam alkali teringan, sangat reaktif, dan bahan utama baterai modern.
+Be|Berilium|Logam kuat yang sangat ringan, digunakan dalam paduan pesawat luar angkasa.
+B|Boron|Metaloid keras, penting untuk struktur dinding sel tumbuhan dan kaca tahan panas.
+C|Karbon|Basis dari semua kehidupan organik, hadir sebagai grafit lunak maupun intan keras.
+N|Nitrogen|Gas tak berwarna penyusun 78% atmosfer bumi, komponen penting untuk pupuk.
+O|Oksigen|Gas esensial untuk pernapasan makhluk hidup dan proses pembakaran.
+F|Fluor|Halogen paling reaktif, senyawanya sering digunakan untuk mencegah kerusakan gigi.
+Ne|Neon|Gas mulia inert yang menghasilkan cahaya oranye kemerahan terang pada lampu tabung.
+Na|Natrium|Logam lunak yang bereaksi hebat dengan air, komponen utama garam dapur (NaCl).
+Mg|Magnesium|Logam ringan yang terbakar dengan cahaya putih menyilaukan, penting bagi fungsi tubuh.
+Al|Aluminium|Logam ringan, tahan karat, dan melimpah yang banyak dipakai untuk kaleng dan pesawat.
+Si|Silikon|Semikonduktor utama yang menjadi dasar pembuatan sirkuit komputer dan kaca.
+P|Fosfor|Nonlogam yang penting untuk DNA dan tulang, bahan utama pembuat ujung korek api.
+S|Belerang|Nonlogam kuning rapuh, berbau khas menyengat ketika terbakar.
+Cl|Klorin|Gas kuning kehijauan berbau tajam, sering digunakan untuk disinfektan air dan kolam renang.
+Ar|Argon|Gas mulia inert pelindung dalam pengelasan logam dan pengisi lampu pijar.
+K|Kalium|Logam alkali lunak, sangat reaktif di air, dan vital untuk fungsi saraf manusia.
+Ca|Kalsium|Logam alkali tanah yang esensial untuk kekuatan tulang, gigi, dan cangkang.
+Sc|Skandium|Logam transisi yang sering dipadukan dengan aluminium untuk rangka sepeda balap.
+Ti|Titanium|Logam ringan berkekuatan sekuat baja namun tahan korosi, sering dipakai untuk implan medis.
+V|Vanadium|Logam keras yang ditambahkan ke baja untuk membuatnya lebih kuat dan lentur.
+Cr|Kromium|Logam keras berkilau yang memberi sifat tahan karat pada baja (stainless steel).
+Mn|Mangan|Logam rapuh yang penting untuk produksi paduan besi dan baterai kering.
+Fe|Besi|Logam paling banyak digunakan manusia, penyusun utama baja dan inti bumi.
+Co|Kobalt|Logam transisi bahan pigmen biru kuno, sangat penting untuk baterai perangkat elektronik.
+Ni|Nikel|Logam tahan korosi yang sering digunakan dalam proses pelapisan dan pembuatan koin.
+Cu|Tembaga|Logam kemerahan penghantar listrik dan panas yang sangat baik, umum digunakan dalam kabel.
+Zn|Seng|Logam kebiruan yang biasa diaplikasikan pada besi untuk mencegah karat (galvanisasi).
+Ga|Galium|Logam lunak dengan titik leleh sangat rendah, bisa meleleh jika digenggam di telapak tangan.
+Ge|Germanium|Metaloid semikonduktor yang penting dalam pembuatan serat optik dan transistor canggih.
+As|Arsenik|Metaloid beracun yang secara historis digunakan dalam pengawetan kayu dan pestisida.
+Se|Selenium|Nonlogam yang esensial dalam jumlah kecil untuk tubuh, digunakan juga dalam panel surya.
+Br|Bromin|Satu-satunya unsur nonlogam yang berwujud cair pada suhu ruang, berwarna kemerahan.
+Kr|Kripton|Gas mulia yang dipakai dalam lampu kilat fotografi kecepatan tinggi dan lampu pendar.
+Rb|Rubidium|Logam alkali yang sangat reaktif, dapat terbakar secara spontan jika terkena udara.
+Sr|Stronsium|Logam alkali tanah yang senyawanya memberi warna merah menyala pada kembang api.
+Y|Itrium|Logam transisi yang digunakan dalam pembuatan LED putih dan layar televisi warna lama.
+Zr|Zirkonium|Logam tahan panas tinggi, digunakan untuk melapisi reaktor nuklir dan perhiasan imitasi intan.
+Nb|Niobium|Logam transisi superkonduktor yang digunakan dalam mesin MRI dan paduan pesawat terbang.
+Mo|Molibdenum|Logam dengan titik leleh tinggi, penting untuk enzim makhluk hidup dan paduan baja.
+Tc|Teknesium|Unsur buatan manusia pertama, bersifat radioaktif dan penting untuk pencitraan medis.
+Ru|Rutenium|Logam keras dan langka yang digunakan untuk melapisi kontak listrik agar tidak aus.
+Rh|Rodium|Logam sangat berharga dan mengkilap, komponen utama pengubah katalitik pada knalpot mobil.
+Pd|Paladium|Logam berharga yang dapat menyerap hidrogen dalam jumlah besar, penting untuk pemurnian gas.
+Ag|Perak|Logam mulia dengan konduktivitas listrik dan termal tertinggi, sering digunakan untuk perhiasan.
+Cd|Kadmium|Logam beracun yang dulunya umum digunakan dalam baterai isi ulang (Ni-Cd) dan pigmen kuning.
+In|Indium|Logam lunak keperakan yang transparan dan konduktif, esensial untuk pembuatan layar sentuh (LCD).
+Sn|Timah|Logam lunak yang tidak mudah berkarat, banyak dipakai untuk pelapis kaleng makanan dan solder.
+Sb|Antimon|Metaloid rapuh yang digunakan sebagai bahan penahan api dan dalam paduan aki timbal-asam.
+Te|Telurium|Metaloid keperakan yang sering dipadukan dengan tembaga atau baja agar lebih mudah dibentuk.
+I|Iodin|Halogen nonlogam ungu kehitaman, nutrisi yang sangat penting untuk fungsi kelenjar tiroid manusia.
+Xe|Xenon|Gas mulia berat yang memancarkan cahaya biru indah saat dialiri listrik, digunakan dalam lampu kilat.
+Cs|Sesium|Logam alkali emas keperakan yang sangat reaktif, menjadi dasar penentuan standar waktu jam atom.
+Ba|Barium|Logam alkali tanah berat, senyawanya diminum pasien untuk memperjelas hasil rontgen pencernaan.
+La|Lantanum|Unsur pertama dari golongan lantanida, banyak digunakan dalam pembuatan lensa kamera berkualitas tinggi.
+Ce|Serium|Unsur tanah jarang yang paling melimpah, umum digunakan sebagai bahan pembuat batu api korek gas.
+Pr|Praseodimium|Logam tanah jarang yang digunakan dalam kacamata khusus tukang las untuk memblokir cahaya kuning pelindung.
+Nd|Neodimium|Bahan utama pembuat magnet permanen terkuat yang ada di motor listrik dan headphone.
+Pm|Prometium|Unsur radioaktif langka yang digunakan dalam cat bercahaya dan baterai nuklir berskala kecil.
+Sm|Samarium|Logam tanah jarang, bahan pembuat magnet permanen yang bisa bertahan di suhu yang sangat tinggi.
+Eu|Europium|Unsur tanah jarang yang menghasilkan warna merah terang pada layar TV dan lampu hemat energi.
+Gd|Gadolinium|Logam tanah jarang dengan sifat magnetik unik, digunakan sebagai zat kontras dalam pemindaian MRI.
+Tb|Terbium|Logam tanah jarang yang dapat bersinar hijau terang, sering dipakai pada uang kertas untuk mencegah pemalsuan.
+Dy|Disprosium|Logam lunak yang memiliki kekuatan magnetik sangat tinggi saat berada pada suhu yang sangat rendah.
+Ho|Holmium|Memiliki kekuatan magnetik tertinggi di antara semua unsur, digunakan di ujung kutub magnet terkuat.
+Er|Erbium|Logam tanah jarang yang dipakai pada kabel serat optik untuk memperkuat sinyal data jarak jauh.
+Tm|Tulium|Salah satu lantanida paling langka, digunakan sebagai sumber radiasi dalam mesin sinar-X portabel.
+Yb|Iterbium|Logam tanah jarang keperakan yang dapat meningkatkan kekuatan pada baja paduan tahan karat.
+Lu|Lutesium|Unsur lantanida terberat dan termahal, digunakan sebagai katalis dalam proses pengilangan minyak bumi.
+Hf|Hafnium|Logam mengkilap yang menyerap neutron dengan sangat baik, penting untuk batang kendali reaktor nuklir.
+Ta|Tantalum|Logam yang sangat tahan korosi, esensial untuk pembuatan kapasitor kecil di dalam ponsel dan komputer.
+W|Wolfram|Logam dengan titik leleh tertinggi dari semua logam, dipakai secara tradisional sebagai filamen lampu pijar.
+Re|Renium|Logam padat dengan titik leleh sangat tinggi, ditambahkan pada mesin jet agar tahan panas ekstrem.
+Os|Osmium|Unsur alami paling padat yang pernah diketahui, sering dipakai untuk ujung pena tinta berkualitas tinggi.
+Ir|Iridium|Logam paling tahan korosi, banyak ditemukan pada meteorit dan digunakan untuk bahan busi kendaraan.
+Pt|Platina|Logam mulia berat, bernilai tinggi, dan sangat penting sebagai katalis dalam industri serta perhiasan.
+Au|Emas|Logam mulia kuning yang sangat lunak, tahan karat, dan melambangkan kekayaan sepanjang sejarah peradaban.
+Hg|Raksa|Satu-satunya logam berwujud cair pada suhu ruang, dulunya sangat umum digunakan pada termometer.
+Tl|Talium|Logam lunak yang sangat beracun, di masa lalu sering digunakan sebagai racun tikus dan semut.
+Pb|Timbal|Logam berat yang lunak dan mudah dibentuk, banyak digunakan dalam aki mobil dan perisai radiasi sinar-X.
+Bi|Bismut|Logam dengan kristal warna-warni yang indah, tidak beracun, dan sering digunakan dalam obat pereda sakit perut.
+Po|Polonium|Unsur radioaktif langka dan sangat beracun yang pertama kali ditemukan oleh ilmuwan Marie Curie.
+At|Astatin|Halogen radioaktif yang merupakan unsur alami paling langka, hanya terdapat beberapa gram di seluruh kerak bumi.
+Rn|Radon|Gas mulia radioaktif tak berbau dan tak berwarna yang berbahaya jika menumpuk di ruang bawah tanah rumah.
+Fr|Fransium|Logam alkali radioaktif yang sangat rapuh, bereaksi hebat dengan air, dan sangat langka di alam.
+Ra|Radium|Logam alkali tanah radioaktif yang bisa bercahaya dalam gelap, dulunya dipakai untuk cat angka pada jam tangan.
+Ac|Aktinium|Unsur radioaktif yang bercahaya biru pucat dalam kegelapan, menjadi awal dari deret unsur aktinida.
+Th|Torium|Logam radioaktif lemah yang melimpah dan berpotensi besar menjadi bahan bakar reaktor nuklir generasi mendatang.
+Pa|Protaktinium|Unsur radioaktif beracun yang sangat langka, merupakan salah satu produk dari peluruhan uranium.
+U|Uranium|Logam radioaktif berat yang menjadi sumber bahan bakar utama untuk pembangkit listrik tenaga nuklir.
+Np|Neptunium|Unsur buatan manusia (transuranium) pertama yang disintesis, diproduksi di reaktor nuklir.
+Pu|Plutonium|Logam radioaktif yang sangat beracun, digunakan sebagai bahan bakar reaktor dan komponen utama senjata nuklir.
+Am|Amerisium|Unsur radioaktif buatan yang penggunaannya sangat umum sebagai sensor pada detektor asap rumah tangga.
+Cm|Kurium|Unsur sintetis radioaktif yang dinamai dari Marie Curie, dipakai sebagai sumber energi termoelektrik untuk wahana antariksa.
+Bk|Berkelium|Unsur radioaktif sintetis berat yang sejauh ini hanya digunakan untuk kepentingan penelitian ilmiah dasar.
+Cf|Kalifornium|Unsur buatan yang memancarkan banyak neutron, sangat berguna dalam alat pendeteksi kelembapan tanah atau minyak.
+Es|Einsteinium|Unsur sintetis radioaktif yang pertama kali ditemukan dari puing-puing ledakan bom hidrogen, dinamai dari Albert Einstein.
+Fm|Fermium|Unsur radioaktif berat yang diciptakan dari penembakan neutron, dinamai dari fisikawan pemenang Nobel, Enrico Fermi.
+Md|Mendelevium|Unsur buatan yang dinamai dari Dmitri Mendeleev, sang ilmuwan penyusun sistem periodik unsur.
+No|Nobelium|Unsur superberat buatan yang radioaktif dan dinamai untuk menghormati penemu dinamit, Alfred Nobel.
+Lr|Lawrensium|Unsur terakhir dari kelompok aktinida yang disintesis dari kalifornium dan dinamai dari penemu siklotron, Ernest Lawrence.
+Rf|Ruterfordium|Logam transisi superberat yang sangat radioaktif dan berumur pendek, dinamai dari pionir fisika nuklir Ernest Rutherford.
+Db|Dubnium|Unsur buatan superberat yang sangat tidak stabil, dinamai dari kota Dubna di Rusia, tempat fasilitas riset nuklir berada.
+Sg|Seaborgium|Unsur radioaktif yang dinamai dari Glenn Seaborg, menjadikannya unsur pertama yang dinamai dari ilmuwan yang saat itu masih hidup.
+Bh|Bohrium|Logam transisi buatan radioaktif tinggi yang dinamai untuk menghormati fisikawan kuantum terkenal, Niels Bohr.
+Hs|Hasium|Unsur sintetis superberat yang dinamai dari Hesse, negara bagian di Jerman tempat unsur ini pertama kali dibuat.
+Mt|Meitnerium|Unsur sangat tidak stabil yang dinamai dari Lise Meitner, salah satu ilmuwan wanita perintis penemu fisi nuklir.
+Ds|Darmstadtium|Unsur sintetis superberat radioaktif, dinamai dari kota Darmstadt di Jerman yang menjadi lokasi penemuannya.
+Rg|Roentgenium|Logam buatan manusia yang sangat radioaktif, namanya diambil dari Wilhelm Röntgen sang penemu sinar-X.
+Cn|Kopernisium|Unsur buatan superberat yang diperkirakan sangat mudah menguap, dinamai dari astronom besar Nicolaus Copernicus.
+Nh|Nihonium|Unsur superberat yang pertama kali berhasil disintesis dan dinamai oleh ilmuwan di Asia (Nihon = Jepang).
+Fl|Flerovium|Unsur sintetik superberat yang menjadi objek penelitian "pulau kestabilan" (island of stability) dalam fisika nuklir.
+Mc|Moskovium|Unsur radioaktif buatan dengan waktu paruh sangat pendek, dinamai dari wilayah Moskow di Rusia.
+Lv|Livermorium|Unsur superberat yang diciptakan melalui kolaborasi ilmuwan Rusia dan laboratorium Lawrence Livermore di Amerika Serikat.
+Ts|Tenesin|Unsur buatan yang termasuk kelompok halogen, dinamai dari negara bagian Tennessee di AS (pusat riset nuklir Oak Ridge).
+Og|Oganeson|Gas mulia sintetik sekaligus unsur terberat (nomor atom 118) di tabel periodik saat ini, dinamai dari fisikawan Yuri Oganessian.

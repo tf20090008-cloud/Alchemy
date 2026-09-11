@@ -93,6 +93,7 @@
         </section>
 
         <section class="education-view" id="education-periodic-view" hidden>
+            <div class="development-notice" role="status"><span aria-hidden="true">✦</span> Masih dalam tahap pengembangan</div>
             <div class="education-heading">
                 <div>
                     <p class="eyebrow warm">PETA UNSUR</p>
@@ -105,6 +106,15 @@
                 <div class="panel-heading"><div><h3>Unsur yang tersedia</h3><p>Klik unsur untuk melihat nama dan nomor atomnya.</p></div><span class="atom-count" id="periodic-reference-count">0 unsur</span></div>
                 <div class="periodic-table periodic-table-reference" id="periodic-reference-table" aria-label="Referensi tabel periodik unsur"></div>
             </div>
+            <aside class="element-detail-panel" id="element-detail-panel" hidden>
+                <div class="element-detail-image-wrap"><img id="element-detail-image" alt=""><span id="element-detail-image-status">Gambar belum tersedia</span></div>
+                <div class="element-detail-copy">
+                    <p class="eyebrow warm">KARTU UNSUR</p>
+                    <h3 id="element-detail-name">Pilih unsur</h3>
+                    <div class="element-detail-meta"><strong id="element-detail-symbol">—</strong><span id="element-detail-number">Nomor atom —</span><span id="element-detail-type">—</span></div>
+                    <p id="element-detail-description">Klik salah satu unsur untuk melihat detailnya.</p>
+                </div>
+            </aside>
             <div class="periodic-quiz-panel">
                 <div class="quiz-heading"><div><p class="eyebrow warm">QUIZ UNSUR</p><h3>Seberapa kenal kamu dengan tabel periodik?</h3><p id="periodic-quiz-prompt">Jawab pertanyaan untuk menguji ingatanmu.</p></div><strong id="periodic-quiz-score">0 / 0 benar</strong></div>
                 <div class="quiz-question" id="periodic-quiz-question"></div>
